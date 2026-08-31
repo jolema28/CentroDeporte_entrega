@@ -27,7 +27,7 @@ public class CentroDeporteTest {
     @BeforeEach
     void antesDeCadaTest() {
         centroDeporte = new CentroDeporte();
-        centroDeporte.agregarSocio("12345678", "Ana Perez");
+        centroDeporte.agregarSocio("51276420", "Josefina Lema");
     }
 
     @AfterEach
@@ -45,7 +45,7 @@ public class CentroDeporteTest {
 
     @Test
     void agregarSocioDuplicadoDebeRetornarFalse() {
-        boolean resultado = centroDeporte.agregarSocio("12345678", "Ana Perez");
+        boolean resultado = centroDeporte.agregarSocio("51276420", "Josefia Lema");
 
         assertFalse(resultado);
         assertEquals(1, centroDeporte.obtenerCantidadSocios());
@@ -63,10 +63,10 @@ public class CentroDeporteTest {
 
     @Test
     void eliminarSocioCuandoExisteDebeRetornarTrue() {
-        boolean resultado = centroDeporte.eliminarSocio("12345678");
+        boolean resultado = centroDeporte.eliminarSocio("51276420");
 
         assertTrue(resultado);
-        assertFalse(centroDeporte.existeSocio("12345678"));
+        assertFalse(centroDeporte.existeSocio("51276420"));
     }
 
     @Test
@@ -79,17 +79,17 @@ public class CentroDeporteTest {
 
     @Test
     void existeSocioCuandoFueAgregadoDebeRetornarTrue() {
-        boolean resultado = centroDeporte.existeSocio("12345678");
+        boolean resultado = centroDeporte.existeSocio("51276420");
 
         assertTrue(resultado);
     }
 
     @Test
     void inscribirActividadConSocioExistenteDebeRetornarTrue() {
-        boolean resultado = centroDeporte.inscribirActividad("12345678", "Natacion");
+        boolean resultado = centroDeporte.inscribirActividad("51276420", "Natacion");
 
         assertTrue(resultado);
-        assertTrue(centroDeporte.estaInscripto("12345678", "Natacion"));
+        assertTrue(centroDeporte.estaInscripto("51276420", "Natacion"));
     }
 
     @Test
@@ -102,9 +102,9 @@ public class CentroDeporteTest {
 
     @Test
     void inscribirActividadDuplicadaDebeRetornarFalse() {
-        centroDeporte.inscribirActividad("12345678", "Natacion");
+        centroDeporte.inscribirActividad("51276420", "Natacion");
 
-        boolean resultado = centroDeporte.inscribirActividad("12345678", "Natacion");
+        boolean resultado = centroDeporte.inscribirActividad("51276420", "Natacion");
 
         assertFalse(resultado);
         assertEquals(1, centroDeporte.obtenerCantidadInscriptos("Natacion"));
@@ -112,33 +112,33 @@ public class CentroDeporteTest {
 
     @Test
     void cancelarInscripcionCuandoExisteDebeRetornarTrue() {
-        centroDeporte.inscribirActividad("12345678", "Futbol");
+        centroDeporte.inscribirActividad("51276420", "Futbol");
 
-        boolean resultado = centroDeporte.cancelarInscripcion("12345678", "Futbol");
+        boolean resultado = centroDeporte.cancelarInscripcion("51276420", "Futbol");
 
         assertTrue(resultado);
-        assertFalse(centroDeporte.estaInscripto("12345678", "Futbol"));
+        assertFalse(centroDeporte.estaInscripto("51276420", "Futbol"));
     }
 
     @Test
     void cancelarInscripcionCuandoNoExisteDebeRetornarFalse() {
-        boolean resultado = centroDeporte.cancelarInscripcion("12345678", "Tenis");
+        boolean resultado = centroDeporte.cancelarInscripcion("51276420", "Tenis");
 
         assertFalse(resultado);
     }
 
     @Test
     void estaInscriptoCuandoSocioEstaEnActividadDebeRetornarTrue() {
-        centroDeporte.inscribirActividad("12345678", "Basquetbol");
+        centroDeporte.inscribirActividad("51276420", "Basquetbol");
 
-        boolean resultado = centroDeporte.estaInscripto("12345678", "Basquetbol");
+        boolean resultado = centroDeporte.estaInscripto("51276420", "Basquetbol");
 
         assertTrue(resultado);
     }
 
     @Test
     void estaInscriptoCuandoActividadNoExisteDebeRetornarFalse() {
-        boolean resultado = centroDeporte.estaInscripto("12345678", "Handball");
+        boolean resultado = centroDeporte.estaInscripto("51276420", "Handball");
 
         assertFalse(resultado);
     }
@@ -156,7 +156,7 @@ public class CentroDeporteTest {
     @Test
     void obtenerCantidadInscriptosDebeRetornarTotalPorActividad() {
         centroDeporte.agregarSocio("22222222", "Maria Rodriguez");
-        centroDeporte.inscribirActividad("12345678", "Yoga");
+        centroDeporte.inscribirActividad("51276420", "Yoga");
         centroDeporte.inscribirActividad("22222222", "Yoga");
 
         int cantidad = centroDeporte.obtenerCantidadInscriptos("Yoga");
