@@ -78,5 +78,3 @@ Resultado:
 - Errores: 0
 - Tests omitidos: 0
 - Cobertura de lineas JaCoCo: 28 de 30 lineas, aproximadamente 93%
-
-Nota: no se incluye link de GitHub dentro de este entregable local. Para completar esa parte de la consigna, se puede crear un repositorio y subir este mismo proyecto manualmente.
